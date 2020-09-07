@@ -30,6 +30,8 @@ class Dashboard extends Component {
 		this.setState({visible: true});
 	}
 
+
+	//Both Methods use to handle Adding and Editing Tasks
 	setModalType = (modalType)=>{
 		this.setState({
 			modalType: modalType,
@@ -43,6 +45,8 @@ class Dashboard extends Component {
 	}
 
 
+
+	//Displays the tasks via a map pulling data from MobX store as it goes.
 	displayTasks = () => {
 		const store = useContext(StoreContext);
 		return useObserver(() => (
@@ -57,10 +61,11 @@ class Dashboard extends Component {
 
 			</div>
 		))
-	}
+	};
+
+
 
 	render() {
-
 		const {visible,modalType,currentTask} = this.state;
 		console.log(storeInstance);
 		if (visible === false) {

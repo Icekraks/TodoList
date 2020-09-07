@@ -13,6 +13,7 @@ export default class Login extends Component {
 		}
 	}
 
+	//Handles Login validation, uses mobx to store a validation check for if your signed in or not.
 	handleLogin=(e)=>{
 		e.preventDefault();
 		const {username,password} = this.state;

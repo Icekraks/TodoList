@@ -5,9 +5,6 @@ import {useObserver} from "mobx-react";
 
 export default class TaskCard extends Component {
 
-
-
-
 	taskNavigation = () => {
 		const store = useContext(StoreContext);
 		const {task,setCurrentTask,setModalType} = this.props;
