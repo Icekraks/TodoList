@@ -6,9 +6,17 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "bootstrap": "^4.5.2",
+    "history": "^4.10.1",
+    "mobx": "^5.15.6",
+    "mobx-react": "^6.3.0",
+    "node-sass": "^4.14.1",
+    "prismjs": "^1.21.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-feather": "^2.0.8",
+    "react-scripts": "3.4.3",
+    "reactstrap": "^8.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,5 +38,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "react-router-dom": "^5.2.0",
+    "react-strap": "^0.0.1",
+    "react-toastify": "^6.0.8"
   }
 }
