@@ -18,8 +18,8 @@ class Dashboard extends Component {
 		console.log("lol dashboard");
 		this.state = {
 			visible: false,
-			modalType:'',
-			currentTask:''
+			modalType: '',
+			currentTask: ''
 		}
 	}
 
@@ -32,18 +32,17 @@ class Dashboard extends Component {
 
 
 	//Both Methods use to handle Adding and Editing Tasks
-	setModalType = (modalType)=>{
+	setModalType = (modalType) => {
 		this.setState({
 			modalType: modalType,
 		})
 	}
 
-	setCurrentTask=(currentTask)=>{
+	setCurrentTask = (currentTask) => {
 		this.setState({
-			currentTask:currentTask,
+			currentTask: currentTask,
 		})
 	}
-
 
 
 	//Displays the tasks via a map pulling data from MobX store as it goes.
@@ -54,7 +53,9 @@ class Dashboard extends Component {
 				<h1>Task Count is at {store.tasks.length}</h1>
 				<div className="d-flex flex-column justify-content-center align-items-center">
 					<Button onClick={() => this.setModalType("Add")}>Add new Task</Button>
-					{store.tasks.map((e) => (<TaskCard setModalType={this.setModalType} setCurrentTask={this.setCurrentTask} task={e}/>))}
+					<br/>
+					{store.tasks.map((e) => (
+						<TaskCard setModalType={this.setModalType} setCurrentTask={this.setCurrentTask} task={e}/>))}
 
 				</div>
 
@@ -64,9 +65,8 @@ class Dashboard extends Component {
 	};
 
 
-
 	render() {
-		const {visible,modalType,currentTask} = this.state;
+		const {visible, modalType, currentTask} = this.state;
 		console.log(storeInstance);
 		if (visible === false) {
 			return null
@@ -78,10 +78,10 @@ class Dashboard extends Component {
 				<div className={"BodyElement"}>
 					<this.displayTasks/>
 				</div>
-				<div style={{marginLeft:"100px",marginRight:"100px"}}>
-				{modalType!=='' && <TaskModal currentTask={currentTask} setCurrentTask={this.setCurrentTask} modalType={modalType} setModalType={this.setModalType}/>}
-				</div>
-				</div>
+				{modalType !== '' &&
+				<TaskModal currentTask={currentTask} setCurrentTask={this.setCurrentTask} modalType={modalType}
+				           setModalType={this.setModalType}/>}
+			</div>
 
 
 		)

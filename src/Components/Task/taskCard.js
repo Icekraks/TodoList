@@ -1,5 +1,5 @@
 import React, {Component, useContext} from 'react';
-import {Card, Button, CardHeader, CardTitle, CardBody} from 'reactstrap'
+import {Card, Button, CardHeader, CardTitle, CardBody,CardFooter} from 'reactstrap'
 import {StoreContext} from "../../App";
 import {useObserver} from "mobx-react";
 
@@ -9,7 +9,7 @@ export default class TaskCard extends Component {
 		const store = useContext(StoreContext);
 		const {task,setCurrentTask,setModalType} = this.props;
 		return useObserver(() => (
-			<div>
+			<div className="d-flex justify-content-between align-items-center">
 				<Button onClick={()=>{
 					setCurrentTask(task);
 					setModalType("Edit");
@@ -33,8 +33,10 @@ export default class TaskCard extends Component {
 					</CardHeader>
 					<CardBody>
 						<span>{task.value}</span>
-						<this.taskNavigation/>
 					</CardBody>
+					<CardFooter>
+						<this.taskNavigation/>
+					</CardFooter>
 				</Card>
 			</React.Fragment>
 
