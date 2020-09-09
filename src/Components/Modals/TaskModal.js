@@ -15,6 +15,7 @@ import {
 
 import {StoreContext} from "../../App";
 import {useObserver} from "mobx-react";
+import {toast} from 'react-toastify';
 
 
 /*
@@ -50,8 +51,10 @@ export default class TaskModal extends Component {
 		return useObserver(() => (
 			<Form onSubmit={(e)=>{
 				e.preventDefault();
+				currentTask===''? toast.success("Task Added") : toast.success("Task Edited");
 				currentTask===''? store.addTask({title,value}):store.editTask(currentTask.id,{title,value});
 				this.close();
+
 			}}>
 				<div className="d-flex justify-content-center mt-2">
 					<Card>

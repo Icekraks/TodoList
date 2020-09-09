@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Card,CardHeader,CardTitle,CardBody,Form,FormGroup,Label,Input} from 'reactstrap'
 import history from '../history'
 import storeInstance from "../Store";
+import {toast} from 'react-toastify'
 
 
 export default class Login extends Component {
@@ -17,17 +18,18 @@ export default class Login extends Component {
 	handleLogin=(e)=>{
 		e.preventDefault();
 		const {username,password} = this.state;
-		if(username==="Icekraks" && password==="123"){
-
-			storeInstance.setLoggedIn(true);
-			history.push("/Dashboard");
+		if(username!=="Icekraks" || password!=="123"){
+			toast.error("Incorrect Password Please Try Again");
+			return null;
 		}
-	}
+		storeInstance.setLoggedIn(true);
+		history.push("/Dashboard");
+
+	};
 
 
 	//yes the form is required so no signing in without a password *duhhh dummy maybe you should have done that previously fw*
 	render() {
-		console.log(storeInstance);
 		return (
 
 			<div className={"BodyElement"}>

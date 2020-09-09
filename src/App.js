@@ -4,6 +4,7 @@ import history from "./history"
 import {ToastContainer} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./Assets/SCSS/core/variables/_components-variables.scss"
 
 import {
 	Router,

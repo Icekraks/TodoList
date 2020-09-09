@@ -2,6 +2,7 @@ import React, {Component, useContext} from 'react';
 import {Card, Button, CardHeader, CardTitle, CardBody,CardFooter} from 'reactstrap'
 import {StoreContext} from "../../App";
 import {useObserver} from "mobx-react";
+import {toast} from "react-toastify";
 
 export default class TaskCard extends Component {
 
@@ -14,7 +15,10 @@ export default class TaskCard extends Component {
 					setCurrentTask(task);
 					setModalType("Edit");
 				}}>Edit Task</Button>
-				<Button color="danger" onClick={() => store.removeTask(task.id)}>Remove Task</Button>
+				<Button color="danger" onClick={() => {
+					store.removeTask(task.id);
+					toast.success("Task Removed");
+				}}>Remove Task</Button>
 			</div>
 
 		))
