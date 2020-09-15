@@ -15,6 +15,7 @@ import {
 import Dashboard from "./Pages/Dashboard/Dashboard"
 import Login from "./Pages/Login"
 import Memes from "./Pages/Memes"
+import HomePage from "./Pages/Home/HomePage";
 
 
 import storeInstance from './Store'
@@ -30,7 +31,8 @@ class App extends Component {
 					<ToastContainer/>
 
 					<Switch>
-						<Route exact path={"/"} component={Login}/>
+						<Route exact path={"/"} component={HomePage}/>
+						<Route exact path={"/login"} component={Login}/>
 						<Route exact path={"/Dashboard"} component={Dashboard}/>
 						<Route exact path={"/Memes"} component={Memes}/>
 					</Switch>
